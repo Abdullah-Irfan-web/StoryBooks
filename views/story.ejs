@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Story</title>
+    
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="navcontainer">
+        <ul>
+            <li><a href="/publicstory">Public Stories</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </div>
+    <div class="nav">
+        
+        <div class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="story">
+           <h1> StoryBooks </h1>
+        </div>
+    </div>
+    <div style="margin-top: 30px;" class="formcontainer opac">
+        <h1 style="font-weight: 200;">Add Story</h1>
+        <div class="formcontent">
+            <form action="/story" method="post">
+                <div class="form-container">
+                <div class="title">
+                    <input type="text" placeholder="Title" name="title" id="titl">
+                </div>
+                <label style="margin-top: 20px; margin-left: 3px; color: rgb(128, 122, 122);" for="status">Status</label>
+                <div style="margin-top: -30px;" class="status">
+                   
+                   <select name="status" id="status">
+                       <option value="Public" selected>Public</option>
+                       <option value="Private">Private</option>
+                   </select>
+                </div>
+                <div>
+                <h1 style="margin-top: 19px;">Tell Us Your Story:</h1>
+                
+                  <textarea spellcheck="false" style="margin-top: 20px;" name="body" rows="3">
+                      </textarea>
+                </div>
+               
+            </div>
+            <div style="margin-top: 15px; display: flex;">
+            <button class="submitform" type="submit">Save</button>
+            <div  style="margin-top:6.5px;margin-left: 5px;">
+            <a class="cancel" href="/dashboard">Cancel</a>
+        </div>
+        </div>
+            </form>
+           
+        </div>
+    </div>
+
+
+   
+    <script src="script.js"></script>
+   
+   
+   
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="ht" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    
+    <script src="https://kit.fontawesome.com/845b7f6704.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+   
+</head>
+<body>
+    <div class="navcontainer">
+        <ul>
+            <li><a href="/publicstory">Public Stories</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </div>
+    <div class="nav">
+        
+        <div class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="story">
+           <h1> StoryBooks </h1>
+        </div>
+    </div>
+      
+    
+
+
+
+<div style="display: flex; flex-wrap: wrap;">
+
+<% stories.forEach((stories)=>{ %>
+    <div class="cards" style="width: 24rem; margin-top: 50px;margin-left: 60px;  border-radius: 10px; box-shadow: 10px 5px 10px 2px rgb(172, 169, 169); display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <div  class=""><h1 style="font-weight: 200;"><%=stories.title%></h1></div>
+        
+
+        <div>
+         <p  style="font-size: 22px; text-align: center;">
+             <%=stories.body.substring(0,70)%>
+         </p>
+        </div>
+        
+         <div style="display: flex; align-items: center; justify-content: center; border-radius: 10%">
+             <img style="height: 30px; width: 30px; border-radius: 50%;" src="<%=stories.image%>" alt="<%=stories.firstName.substring(0,1)%>"> <span style="margin-left: 10px;"><a style="text-decoration: none; color: rgb(29, 108, 255);" href=""><%=stories.firstName%> <%=stories.lastName%></a></span>
+         </div>
+         <hr style="height: 1px; width: 100%; background-color: antiquewhite; margin-top: 10px;">
+         
+       
+        <div style="margin-bottom: 15px;">
+            <a  style=" color:white;text-decoration: none; background-color: rgb(83, 82, 82); border: 1px solid rgb(83, 82, 82); border-radius: 3px; padding:5px 5px;"  href="">Read More</a>
+        </div>
+         
+
+    
+       
+      </div> 
+
+<% }) %>
+
+</div>
+
+<div class="pos">
+<div class="addbtn">
+    <a  href="/addstory"><i class="fas fa-plus"></i></a>
+</div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html class="ht" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <script src="https://kit.fontawesome.com/845b7f6704.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navcontainer">
+        <ul>
+            <li><a href="/publicstory">Public Stories</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/logout">Logout</a></li>
+        </ul>
+
+    </div>
+    <div class="nav">
+        
+        <div class="lines">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="story">
+           <h1> StoryBooks </h1>
+        </div>
+    </div>
+
+    <div>
+        <h3 style="margin-top:10px;margin-left: 100px; font-weight: 100;">Dashboard</h3>
+        <h1 style="margin-top: 30px; margin-left: 100px; font-weight: 100;">Welcome <%=username.firstname%></h1>
+        <h4 style="margin-top: 20px; margin-left: 100px; font-weight: 100;">Here are your stories</h4>
+        <div class="storycontent">
+            <table id="customers">
+                <tr>
+                  <th>Title</th>
+                  <th>Date</th>
+                  <th>Status</th>
+                  <th>Operation</th>
+                </tr>
+                <% story.forEach((stry)=>{%>
+                    <tr>
+                        <td style="color: rgb(13, 166, 255);"><%=stry.title%></td>
+                        <td><%=moment(stry.createdAt).format('MMMM Do YYYY, h:mm:ss a')%></td>
+                        <td><%=stry.status%></td>
+                        <td><a  href="/edit/<%= stry.id%>"> <span style="background: rgb(1, 146, 122);padding: 6px 10px; border-radius: 2px;"><i style="color: white;" class="fas fa-edit"></i></span></a>
+                            <a  href="/delete/<%= stry.id%>"> <span style="background: rgb(236, 65, 13);padding: 6px 10px; border-radius: 2px;margin-left: 5px;"><i style="color: white;" class="fas fa-trash"></i></span></a>
+                      </td>
+                      </tr>
+              <%  })%>
+               
+               
+                  
+                 
+               
+              </table>
+        </div>
+    </div>
+    <div class="pos">
+<div class="addbtn">
+    <a  href="/addstory"><i class="fas fa-plus"></i></a>
+</div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
